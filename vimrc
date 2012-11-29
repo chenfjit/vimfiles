@@ -1,7 +1,4 @@
 " General {{{
-colorscheme desert
-set guifontwide=WenQuanYi\ Micro\ Hei   " font for CJK chars
-
 set nocompatible        " disable vi compatibility
 set history=256         " number of things to remember in history
 set autowrite           " write on make/shell commands
@@ -38,8 +35,6 @@ set fo+=o   " automatically insert the current comment leader after hitting 'o' 
 set fo-=r   " do not automatically insert a comment leader after ann enter
 set fo-=t   " do not auto-wrap text using textwidth (does not apply to comments)
 
-set nowrap
-set textwidth=0             " don't wrap lines by default
 set wildmode=longest,list   " at command line, complete longest common string, the list alternatives
 
 set backspace=indent,eol,start  " more powerful backspacing
@@ -70,15 +65,9 @@ set noerrorbells    " no noise
 set t_vb=           " disable any beeps or flashes on error
 set ruler           " show ruler
 set showcmd         " display an incomplete command at the bottom right corner of the vim window
-set shortmess=atI   " shortens messages
+" set shortmess=atI   " shortens messages
 
 set laststatus=2    " always show status line
-"set statusline=%<\ %F\ %m%r%y\ [%{&ff}\|%{&fenc}]
-"set statusline+=%=%-20.((%l,%c%V)/%L%)
-"set statusline+=%=%-10.(%{strftime('%H:%M')}%)
-
-" set nolist          " display unprintable characters (F12 - switches)
-" set listchars=tab:·\ ,eol:¶,trail:·,extends:»,precedes:«    " Unprintable chars mapping
 
 set foldenable          " turn on folding
 set foldmethod=syntax   " fold on the marker
@@ -88,8 +77,6 @@ set foldopen=block,hor,mark,percent,quickfix,tag    " what movements open folds
 set mouse-=a    " disable mouse
 set mousehide   " hide mouse after chars typed
 
-set splitbelow
-set splitright
 " }}}
 
 " {{{ command and auto commands
@@ -116,9 +103,6 @@ nnoremap <silent> <C-J> gEa<CR><ESC>ew
 nnoremap # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 nnoremap * #
 
-" show/hide hidden chars
-" map <silent> <F12> :set invlist<CR>
-
 set guioptions-=m
 set guioptions-=T
 set guioptions-=L
@@ -144,10 +128,23 @@ call vundle#rc()
 " let vundle manage vundle
 Bundle 'gmarik/vundle'
 
+" awesome status line
 Bundle 'Lokaltog/vim-powerline'
 set guifont=Liberation\ Mono\ for\ Powerline
 let g:Powerline_symbols='fancy'
 
+" tree explorer
 Bundle 'scrooloose/nerdtree'
+
+" molokai color scheme
+Bundle 'tomasr/molokai'
+colorscheme molokai
+let g:molokai_original=1
+
+Bundle 'vim-scripts/FencView.vim'
+
+Bundle 'vim-scripts/TabBar'
+
+Bundle 'vim-scripts/taglist.vim'
 
 " }}}
