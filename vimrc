@@ -68,6 +68,9 @@ set showcmd         " display an incomplete command at the bottom right corner o
 " set shortmess=atI   " shortens messages
 
 set laststatus=2    " always show status line
+set statusline=%<\ %F\ %m%r%y\ [%{&ff}\|%{&fenc}]
+set statusline+=%=%-20.((%l,%c%V)/%L%)
+set statusline+=%=%-10.(%{strftime('%H:%M')}%)
 
 set foldenable          " turn on folding
 set foldmethod=syntax   " fold on the marker
@@ -127,11 +130,6 @@ call vundle#rc()
 
 " let vundle manage vundle
 Bundle 'gmarik/vundle'
-
-" awesome status line
-Bundle 'Lokaltog/vim-powerline'
-set guifont=Liberation\ Mono\ for\ Powerline
-let g:Powerline_symbols='fancy'
 
 " tree explorer
 Bundle 'scrooloose/nerdtree'
