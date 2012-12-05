@@ -77,7 +77,7 @@ set foldmethod=syntax   " fold on the marker
 set foldlevel=100       " don't automatically fold anything
 set foldopen=block,hor,mark,percent,quickfix,tag    " what movements open folds
 
-set mouse-=a    " disable mouse
+" set mouse-=a    " disable mouse
 set mousehide   " hide mouse after chars typed
 
 " }}}
@@ -146,5 +146,6 @@ Bundle 'vim-scripts/TabBar'
 Bundle 'vim-scripts/taglist.vim'
 
 Bundle 'vim-scripts/grep.vim'
+nnoremap <silent> <F3> :Grep<CR>
 
 " }}}
