@@ -145,4 +145,6 @@ Bundle 'vim-scripts/TabBar'
 
 Bundle 'vim-scripts/taglist.vim'
 
+Bundle 'vim-scripts/grep.vim'
+
 " }}}
