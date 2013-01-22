@@ -80,6 +80,13 @@ set foldopen=block,hor,mark,percent,quickfix,tag    " what movements open folds
 " set mouse-=a    " disable mouse
 set mousehide   " hide mouse after chars typed
 
+" Add right margin line
+" By default, background color of the area outside the margin line is red, which
+" is horrible. Add the following line to your colorscheme file to beautify it.
+" --> hi ColorColumn guibg=#2d2d2d ctermbg=246
+set textwidth=80
+let &colorcolumn=join(range(81,999),",")
+
 " }}}
 
 " {{{ command and auto commands
@@ -136,8 +143,8 @@ Bundle 'scrooloose/nerdtree'
 
 " molokai color scheme
 Bundle 'tomasr/molokai'
-colorscheme molokai
-let g:molokai_original=1
+" colorscheme molokai
+" let g:molokai_original=1
 
 Bundle 'vim-scripts/FencView.vim'
 
