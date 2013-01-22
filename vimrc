@@ -99,6 +99,8 @@ au BufRead,BufNewFile {*.md,*.mkd,*markdown}                        set ft=markd
 au BufRead,BufNewFile {COMMIT_EDITMSG}                              set ft=gitcommit
 au BufWritePost .vimrc source ~/.vimrc     " auto reload settings
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif     " restore position in file
+
+au FileType ruby,cpp setlocal ts=2 sts=2 sw=2 expandtab
 " }}}
 
 " key mappings {{{
